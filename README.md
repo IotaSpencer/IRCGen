@@ -1,0 +1,5 @@
+# IRCGenrb
+
+## Dependencies
+* highline
+* slop
