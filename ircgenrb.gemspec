@@ -10,7 +10,7 @@ EOF
   s.authors         = ["Ken Spencer"]
   s.email           = 'iota@electrocode.net'
   s.require_paths   = ["../lib"]
-  s.executables     = "ircgenrb"
+  s.executables     = "ircdgen.rb"
   s.files           = `git ls-files -z`.split("\x0")
   s.homepage        = 'http://electrocode.net/ircgenrb'
   s.license         = 'MIT'
