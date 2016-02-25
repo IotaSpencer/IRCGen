@@ -1,4 +1,4 @@
-require "version"
+require "lib/version"
 
 
 Gem::Specification.new do |s|
