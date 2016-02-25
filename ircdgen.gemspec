@@ -13,7 +13,7 @@ EOF
   s.email                   = "iota@electrocode.net"
   s.require_paths           = ["lib"]
   s.default_executable      = "ircdgen"
-  s.executables             = "ircdgen.rb"
+  s.executables             = "ircdgen"
   s.files                   = `git ls-files -z`.split("\x0")
   s.homepage                = "http://electrocode.net/ircgenrb"
   s.license                 = "MIT"
