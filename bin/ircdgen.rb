@@ -15,12 +15,12 @@ opts = Slop.parse do |o|
   o.banner = "Usage: #{$0} [options] ....."
   o.separator ""
   o.separator "Description:"
-  o.separator "
-        -    This script can make your 'job' as server owner,
-        -    routing team member, or just starting your own
-        -    server up a whole lot easier
-        -
-        "
+  o.separator <<-LINE
+  This script can make your 'job' as server owner,
+  routing team member, or just starting your own
+  server up a whole lot easier
+
+LINE
   o.separator ""
   o.separator "Main Options:"
   o.array "-t", "--type", "Type(s) of configuration files to generate.
