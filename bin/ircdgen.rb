@@ -1,6 +1,5 @@
 #! /usr/bin/ruby
 
-require ""
+require "questions"
+#require ""
 
-module IRCdGen
-  VERSION = "0.0.0"
