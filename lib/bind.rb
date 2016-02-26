@@ -12,7 +12,7 @@ class Bind < Builder
     @bind_port = ask "At what port(s) are we listening to?" do |q|
       q.gather = ""
     end
-    if agree(" do you want ssl for this bind block?", true)
+    if agree("Do you want SSL for this bind block?", true)
       choose do |menu|
         menu.prompt = ("What type of SSL do you want? Make sure you have it compiled!")
         menu.choice(:gnutls, "Use GNU TLS for ssl") do |m|
