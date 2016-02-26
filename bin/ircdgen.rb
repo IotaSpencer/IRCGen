@@ -23,10 +23,10 @@ opts = Slop.parse do |o|
 LINE
   o.separator ""
   o.separator "Main Options:"
-  o.array "-i", "--ircd", <<-DESC
+  o.array "-i", "--ircd", "\
 Type(s) of configuration files to generate.
 IRCds: UnrealIRCd (unreal) / InspIRCd (insp(ircd))
-DESC do |a|
+" do |a|
     case a
     when /^(?i:insp)(?i:ircd)?/
       Generator::Inspircd.main
