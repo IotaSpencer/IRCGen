@@ -23,21 +23,16 @@ opts = Slop.parse do |o|
 LINE
   o.separator ""
   o.separator "Main Options:"
-  o.array "-t", "--type", "Type(s) of configuration files to generate.
-    Types: conf, oper, link, connect, bind" do |a|
+  o.array "-i", "--ircd", <<-DESC
+Type(s) of configuration files to generate.
+IRCds: UnrealIRCd (unreal) / InspIRCd (insp(ircd))
+DESC do |a|
     case a
-    when "conf"
-      Gen.conf
-    when "oper"
-      Gen.opers
-    when "link"
-      Gen.link
-    when "connect"
-      Gen.connect
-    when "bind"
-      Gen.bind
-    when "options"
-      Gen.options
+    when /^(?i:insp)(?i:ircd)?/
+      Generator::Inspircd.main
+    when /^(?i:unreal)(?i:ircd)?/
+      Generator::Unrealircd.main
+
     else
       STDERR.puts "Invalid Selection."
       exit 1
@@ -46,7 +41,7 @@ LINE
   o.separator ""
   o.separator "Other Options"
   o.on '-v', '--version' do
-    puts @Version.join(".")
+    Application.VERSION
     exit
   end
   o.on "-h", "--help", "Prints out help." do
