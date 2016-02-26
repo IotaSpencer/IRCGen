@@ -1,5 +1,5 @@
 require "generator"
-require "pconf"
+
 class Conf < Builder
   # <server>
   attr_accessor :name, :info, :id, :net
@@ -8,16 +8,16 @@ class Conf < Builder
   # <connect>
   attr_accessor :maxchans, :timeout, :pingfreq, :sendq, :recvq, :localmax, :globalmax, :umodes
 
-  def initialize
-    super
-
+  def self.prompt
     # Conf generation
     # <server>
-    say "Alright, first off"
-    say "1. Lets get the irc.server.name"
-    say "2. Your server info/server description/sdesc"
-    say "3. Your numeric. (Talk to your network's routing team or whoever manages linking)"
-    say "This will be your <server> block"
+    say <<-HERE
+Alright, first off
+1. Lets get the irc.server.name
+2. Your server info/server description/sdesc
+3. Your numeric. (Talk to your network's routing team or whoever manages linking)
+This will be your <server> block
+HERE
     @sname = ask "Server Name? "
     @info = ask "Server Description? "
     @id = ask("SID? ") do |q|
@@ -115,42 +115,6 @@ class Conf < Builder
     @umodes = ask("?") do |q|
       q.default = "+ix"
     end
-    print
-  end
-  def print
-    puts \
-      "/*",
-      "# - Regular comment",
-      "/* text */",
-      "# and /* */ can be inline comments",
-      "and as you can see /**/ can also be multiline comments",
-      "*/"
-    # <server>
-    puts \
-      "<server",
-      "  name=\"#{@sname}\"",
-      "  description=\"#{@info}\"",
-      "  id=\"#{@id}\"",
-      "  network=\"#{@net}\">"
-    # <admin>
-    puts \
-      "<admin",
-      "  name=\"#{@name}\"",
-      "  nick=\"#{@nick}\"",
-      "  email=\"#{@e_mail}\">"
-    # <connect>
-    puts \
-      "<connect",
-      "  allow=\"*\"",
-      "  maxchans=\"#{@maxchans}\"",
-      "  timeout=\"#{@timeout}\"",
-      "  pingfreq=\"#{@pingfreq}\"",
-      "  sendq=\"#{@sendq}\"",
-      "  recvq=\"#{@recvq}\"",
-      "  localmax=\"#{@localmax}\"",
-      "  globalmax=\"#{@globalmax}\"",
-      "  useident=\"no\"",
-      "  limit=\"5000\"",
-      "  modes=\"#{@umodes}\">"
+
   end
 end
