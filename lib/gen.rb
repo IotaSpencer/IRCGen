@@ -1,6 +1,6 @@
 require "highline"
 require "builder"
-
+require "questions"
 
 module Generator
   # Base class on Builder to use HighLine
@@ -10,7 +10,7 @@ module Generator
       while agree("Want to make a block?", true)
         choose do |menu|
           menu.choice :conf, "Main Configuration" do |m|
-
+            Gen.conf
           end
           menu.init_help
         end
