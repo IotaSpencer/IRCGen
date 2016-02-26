@@ -1,6 +1,6 @@
 $:.unshift File.dirname($0)
 #Libraries
-require "generator"
+require "builder"
 
 # Custom Code
 require "conf"
