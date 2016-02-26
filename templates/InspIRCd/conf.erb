@@ -1,0 +1,36 @@
+/*
+# - Regular comment",
+/* text */",
+# and /* */ can be inline comments",
+and as you can see /**/ can also be multiline comments",
+*/"
+<%
+# <server>
+%>
+<server
+  name="<% @sname %>"
+  description="<% @info %>"
+  id="<% @id %>"
+  network="<% @net %>">
+<%
+# <admin>
+%>
+<admin
+  name="<% @name %>"
+  nick="<% @nick %>"
+  email="<% @e_mail %>">
+<%
+# <connect>
+%>
+<connect
+  allow="*"
+  maxchans="<% @maxchans %>"
+  timeout="<% @timeout %>"
+  pingfreq="<% @pingfreq %>"
+  sendq="<% @sendq %>"
+  recvq="<% @recvq %>"
+  localmax="<% @localmax %>"
+  globalmax="<% @globalmax %>"
+  useident="no"
+  limit="5000"
+  modes="<% @umodes %>">
