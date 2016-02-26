@@ -3,6 +3,6 @@
 module Application
   # @return [String] Application Version
   def self.VERSION
-    return "0.0.1"
+    return "0.0.2"
   end
 end

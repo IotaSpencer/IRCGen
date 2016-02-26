@@ -17,6 +17,6 @@ EOF
   s.files                   = `git ls-files -z`.split("\x0")
   s.homepage                = "http://electrocode.net/ircgenrb"
   s.license                 = "MIT"
-  s.add_runtime_dependency  "highline", "~> 0"
+  s.add_runtime_dependency  "highline", "~> 1.7.8"
   s.add_runtime_dependency  "slop", "~> 0"
 end
