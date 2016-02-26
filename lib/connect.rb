@@ -128,25 +128,4 @@ class Connect < Builder
     end
     print
   end
-
-  def print
-    puts \
-      "<connect",
-      "  #{@type}=\"#{@host}\"",
-      "  maxchans=\"#{@maxchans}\"",
-      "  timeout=\"#{@timeout}\"",
-      "  pingfreq=\"#{@pingfreq}\"",
-      "  sendq=\"#{@sendq}\"",
-      "  recvq=\"#{@recvq}\"",
-      "  localmax=\"#{@localmax}\"",
-      "  globalmax=\"#{@globalmax}\"",
-      "  useident=\"#{@useident}\""
-    if @wants_port
-      puts \
-        "  port=\"#{@port}\""
-    end
-    puts \
-      "  limit=\"#{@limit}\"",
-      "  modes=\"#{@umodes}\">"
-  end
 end
