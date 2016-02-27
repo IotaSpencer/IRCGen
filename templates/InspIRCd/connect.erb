@@ -1,0 +1,15 @@
+<connect
+  #{@type}="#{@host}"
+  maxchans="#{@maxchans}"
+  timeout="#{@timeout}"
+  pingfreq="#{@pingfreq}"
+  sendq="#{@sendq}"
+  recvq="#{@recvq}"
+  localmax="#{@localmax}"
+  globalmax="#{@globalmax}"
+  useident="#{@useident}"
+  <% if @wants_port %>
+  port="#{@port}"
+  <% end %>
+  limit="#{@limit}"
+  modes="#{@umodes}">
